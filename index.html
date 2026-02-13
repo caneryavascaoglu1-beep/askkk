@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caner ❤️ Pelin</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffd6e0,#ffeaf2);
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+}
+
+/* Kart */
+.card{
+  width:90%;
+  max-width:400px;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+  text-align:center;
+  padding-bottom:20px;
+  position:relative;
+  z-index:2;
+}
+
+.photo{
+  width:100%;
+  border-top-left-radius:25px;
+  border-top-right-radius:25px;
+  display:block;
+}
+
+/* Yazılar */
+h1{
+  color:#ff4d88;
+  margin:15px 10px 5px;
+}
+
+p{
+  color:#555;
+  padding:0 15px;
+}
+
+/* Buton */
+button{
+  margin-top:10px;
+  background:#ff4d88;
+  color:white;
+  border:none;
+  padding:12px 22px;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+button:hover{ background:#ff2f70; }
+
+/* Kalpler */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:float 6s linear infinite;
+  color:#ff4d88;
+  z-index:1;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <!-- FOTOĞRAF (GitHub içinden) -->
+  <img src="foto.jpg" class="photo">
+
+  <h1>Seni Çok Seviyorum ❤️</h1>
+  <p> Hayatımın en güzel tesadüfü… ✨<br>
+      Seninle geçen her an kalbime mutluluk dolduruyor. 💗<br>
+      İyi ki varsın, iyi ki benimlesin güzelim. 🌹</p>
+
+  <button onclick="openLetter()">Aşk Mektubunu Aç 💌</button>
+</div>
+
+<script>
+function openLetter(){
+  const newPage = window.open("", "_blank");
+  newPage.document.write(`
+    <html>
+    <head>
+      <title>Aşk Mektubum</title>
+      <style>
+        body{
+          font-family:Arial;
+          background:linear-gradient(#ffd6e0,#ffeaf2);
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          text-align:center;
+          padding:20px;
+        }
+        .box{
+          background:white;
+          padding:25px;
+          border-radius:20px;
+          box-shadow:0 10px 30px rgba(0,0,0,0.2);
+          max-width:400px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box">
+        <h2>Sana Bir Mektubum Var 💖</h2>
+        <p>
+        Sen hayatıma girdiğin günden beri her şey daha anlamlı… 🌙<br><br>
+        Gülüşün en karanlık günümü aydınlatıyor,
+        Sesin kalbime huzur veriyor.
+        Seninle geçen her saniye,
+        Bu hayatta başıma gelen en güzel mucize gibi… ✨<br><br>
+        Gelecekte nerede olursak olalım,
+        Tek dileğim elini tutmaya devam etmek.
+        Çünkü ben en çok <b>seni</b> seviyorum… ❤️<br><br>
+        İyi ki varsın sevgilim. 💕
+        </p>
+      </div>
+    </body>
+    </html>
+  `);
+}
+
+/* Kalp üret */
+function createHeart(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(15+Math.random()*25)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+}
+setInterval(createHeart,400);
+</script>
+
+</body>
+</html>
